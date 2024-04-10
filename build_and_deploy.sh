@@ -5,6 +5,8 @@ set -e
 # Set script vars
 DOCKER_TAG="dashboard"
 
+ng build
+
 echo "Building target for arm64"
 docker buildx build --platform linux/arm64 -t $DOCKER_TAG .
 
