@@ -3,48 +3,42 @@
     <div>
         <h2>Banks</h2>
     </div>
-    <div class="container">
+    <div>
 
-        <app-ticker-multi tickerList="{{banks1}}"></app-ticker-multi>
-        <!-- <app-ticker-single ticker="NYSE:JPM"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:WFC"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:BAC"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:GS"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:MS"></app-ticker-single> -->
+        <app-ticker-multi [tickerList]="banks1"></app-ticker-multi>
     </div>
-    <div class="container">
-        <!-- <app-ticker-single ticker="NASDAQ:FITB"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:C"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:USB"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:PNC"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:NYCB"></app-ticker-single> -->
+    <div>
+        <app-ticker-multi [tickerList]="banks2"></app-ticker-multi>
+    </div>
+    <div>
+        <app-ticker-multi [tickerList]="banks3"></app-ticker-multi>
     </div>
 </div>
 <div>
     <div>
         <h2>Meme stocks</h2>
     </div>
-    <div class="container">
-        <!-- <app-ticker-single ticker="NYSE:AMC"></app-ticker-single>
-        <app-ticker-single ticker="NYSE:GME"></app-ticker-single>
-        <app-ticker-single ticker="NASDAQ:HYMC"></app-ticker-single> -->
+    <div>
+        <app-ticker-multi [tickerList]="memes"></app-ticker-multi>
     </div>
 </div>
 <div>
     <div>
         <h2>Crypto</h2>
     </div>
-    <div class="container">
-        <!-- <app-ticker-single ticker="COINBASE:BTCUSD"></app-ticker-single>
-        <app-ticker-single ticker="COINBASE:ETHUSD"></app-ticker-single>
-        <app-ticker-single ticker="COINBASE:DOGEUSD"></app-ticker-single>
-        <app-ticker-single ticker="COINBASE:ADAUSD"></app-ticker-single>
-        <app-ticker-single ticker="COINBASE:CLVUSD"></app-ticker-single> -->
+    <div>
+        <app-ticker-multi [tickerList]="crypto1"></app-ticker-multi>
+    </div>
+    <div>
+        <app-ticker-multi [tickerList]="crypto2"></app-ticker-multi>
     </div>
 </div>
 <div>
     <h2>Other</h2>
-    <div class="container">
-
+    <div>
+        <app-ticker-multi [tickerList]="other1"></app-ticker-multi>
+    </div>
+    <div>
+        <app-ticker-multi [tickerList]="other2"></app-ticker-multi>
     </div>
 </div>

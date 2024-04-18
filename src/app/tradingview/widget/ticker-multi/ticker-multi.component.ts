@@ -20,28 +20,9 @@ export class TickerMultiComponent implements AfterViewInit {
   }
 
   private loadScript(): void {
-    this.tickerList = [{
-      "proName": "NYSE:JPM",
-      "title": "JP Morgan"
-    }, {
-      "proName": "NYSE:WFC",
-      "title": "Wells Fargo"
-    }, {
-      "proName": "NYSE:BAC",
-      "title": "BofA"
-    }, {
-      "proName": "NYSE:GS",
-      "title": "Goldman Sacs"
-    }];
     const script = this.renderer.createElement('script');
     const innerhtml = JSON.stringify({
-      "symbols": [
-        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index"},
-        {"proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD"},
-        {"proName": "FX_IDC:EURUSD", "title": "EUR to USD"},
-        {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
-        {"proName": "BITSTAMP:ETHUSD", "title": "Ethereum"}
-      ],
+      "symbols": this.tickerList,
       isTransparent: false,
       showSymbolLogo: true,
       colorTheme: "light",
