@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TickerSingleComponent } from './tradingview/widget/ticker-single/ticker-single.component';
 import { TickerMultiComponent } from './tradingview/widget/ticker-multi/ticker-multi.component';
+import { TICKERS } from './constants';
+import { MarketOverviewComponent } from './tradingview/widget/market-overview/market-overview.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TickerSingleComponent, TickerMultiComponent],
+  imports: [RouterOutlet, TickerSingleComponent, TickerMultiComponent, MarketOverviewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -64,7 +66,7 @@ export class AppComponent {
   }, {
     "proName": "COINBASE:DOGEUSD",
     "title": "Doge"
-  },{
+  }, {
     "proName": "COINBASE:ADAUSD",
     "title": "Cardano"
   }];
@@ -75,13 +77,13 @@ export class AppComponent {
   other1 = [{
     "proName": "NASDAQ:AGNC",
     "title": "AGNC Investments"
-  },{
+  }, {
     "proName": "NYSE:STAG",
     "title": "Stag Industrial"
-  },{
+  }, {
     "proName": "NASDAQ:GLAD",
     "title": "Gladstone Capital"
-  },{
+  }, {
     "proName": "NYSE:SCM",
     "title": "Stellus Capital"
   }];
@@ -89,5 +91,52 @@ export class AppComponent {
     "proName": "NYSE:T",
     "title": "AT&T"
   }];
+
+  marketview = [{
+    "title": "Banks",
+    "symbols": [
+      {
+        "s": TICKERS.JP_MORGAN.proName,
+        "d": TICKERS.JP_MORGAN.title
+      },
+      {
+        "s": TICKERS.WELLS_FARGO.proName,
+        "d": TICKERS.WELLS_FARGO.title
+      },
+      {
+        "s": TICKERS.BANK_OF_AMERICA.proName,
+        "d": TICKERS.BANK_OF_AMERICA.title
+      },
+      {
+        "s": TICKERS.GOLDMAN_SACS.proName,
+        "d": TICKERS.GOLDMAN_SACS.title
+      },
+      {
+        "s": TICKERS.MORGAN_STANLEY.proName,
+        "d": TICKERS.MORGAN_STANLEY.title
+      },
+      {
+        "s": TICKERS.CITI.proName,
+        "d": TICKERS.CITI.title
+      },
+      {
+        "s": TICKERS.US_BANK.proName,
+        "d": TICKERS.US_BANK.title
+      },
+      {
+        "s": TICKERS.PNC.proName,
+        "d": TICKERS.PNC.title
+      },
+      {
+        "s": TICKERS.FIFTH_THIRD.proName,
+        "d": TICKERS.FIFTH_THIRD.title
+      },
+      {
+        "s": TICKERS.NEW_YORK_COMMUNITY_BANK.proName,
+        "d": TICKERS.NEW_YORK_COMMUNITY_BANK.title
+      }
+    ],
+    "originalTitle": "Banks"
+  },]
 }
 
