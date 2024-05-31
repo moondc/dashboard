@@ -14,6 +14,31 @@ import { MarketOverviewComponent } from './tradingview/widget/market-overview/ma
 })
 export class AppComponent {
   title = 'dashboard';
+  mag1 = [{
+    "proName":"NASDAQ:NVDA",
+    "title":"Nvidia"
+  },{
+    "proName":"NASDAQ:GOOGL",
+    "title":"Google"
+  },{
+    "proName":"NASDAQ:AAPL",
+    "title":"Apple"
+  },{
+    "proName":"NASDAQ:AMZN",
+    "title":"Amazon"
+  }
+]
+
+  mag2 = [{
+    "proName":"NASDAQ:MSFT",
+    "title":"Microsoft"
+  },{
+    "proName":"NASDAQ:META",
+    "title":"Meta"
+  },{
+    "proName":"NASDAQ:TSLA",
+    "title":"Tesla"
+  }]
   banks1 = [{
     "proName": "NYSE:JPM",
     "title": "JP Morgan"
@@ -90,6 +115,9 @@ export class AppComponent {
   other2 = [{
     "proName": "NYSE:T",
     "title": "AT&T"
+  },{
+    "proName":"NYSE:BA",
+    "title":"Boeing"
   }];
 
   marketview = [{
