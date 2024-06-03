@@ -14,6 +14,13 @@ import { MarketOverviewComponent } from './tradingview/widget/market-overview/ma
 })
 export class AppComponent {
   title = 'dashboard';
+  commodities = [{
+    "proName":"TVC:GOLD",
+    "title":"Gold"
+  },{
+    "proName":"TVC:SILVER",
+    "title":"Silver"
+  }]
   mag1 = [{
     "proName":"NASDAQ:NVDA",
     "title":"Nvidia"
