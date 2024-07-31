@@ -1,65 +1,14 @@
-<h1>Market View</h1>
-<div>
-    <div>
-        <h2>Magnificent Seven</h2>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="mag1"></app-ticker-multi>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="mag2"></app-ticker-multi>
-    </div>
+<div class="container">
+  <div class="sidebar">
+    <h4>Navigation</h4>
+    <div><a href="https://.com/verdaccio">Verdaccio</a></div>
+    <div><a href="https://.com/kibana">Kibana</a></div>
+    <div><a href="https://.com/tickers">Tickers</a></div>
+    <div><a href="https://.com/admin">Admin</a></div>
+  </div>
+  <div class="main-content">
+    <h2>Main Content</h2>
+    <p>Content goes here.</p>
+    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+  </div>
 </div>
-<div>
-    <div>
-        <h2>Commodities</h2>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="commodities"></app-ticker-multi>
-    </div>
-</div>
-<div>
-    <div>
-        <h2>Banks</h2>
-    </div>
-    <div>
-
-        <app-ticker-multi [tickerList]="banks1"></app-ticker-multi>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="banks2"></app-ticker-multi>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="banks3"></app-ticker-multi>
-    </div>
-</div>
-<div>
-    <div>
-        <h2>Meme stocks</h2>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="memes"></app-ticker-multi>
-    </div>
-</div>
-<div>
-    <div>
-        <h2>Crypto</h2>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="crypto1"></app-ticker-multi>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="crypto2"></app-ticker-multi>
-    </div>
-</div>
-<div>
-    <h2>Other</h2>
-    <div>
-        <app-ticker-multi [tickerList]="other1"></app-ticker-multi>
-    </div>
-    <div>
-        <app-ticker-multi [tickerList]="other2"></app-ticker-multi>
-    </div>
-</div>
-
-<!-- <app-market-overview [tickerList]="marketview"></app-market-overview> -->

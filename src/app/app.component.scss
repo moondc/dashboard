@@ -1,3 +1,50 @@
-.container{
-    display:flex
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Default layout: sidebar beside main content */
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent container scrolling */
+}
+
+.sidebar {
+    width: 250px;
+    /* Fixed width */
+    min-width: 250px;
+    /* Prevents shrinking */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Vertical scrolling if needed */
+}
+
+.main-content {
+    flex: 1;
+    /* Takes up remaining space */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Vertical scrolling if needed */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stack sidebar above main content */
+        overflow-y: auto;
+        /* Allow scrolling if content overflows */
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        /* Allow sidebar to shrink to full width */
+    }
+
+    .main-content {
+        width: 100%;
+    }
 }
