@@ -1,8 +1,9 @@
-<div class="container">
-  <app-side-nav></app-side-nav>
-  <div class="main-content">
-    <h2>Main Content</h2>
-    <p>Content goes here.</p>
-    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-  </div>
-</div>
+<mat-drawer-container class="container">
+  <mat-drawer autoFocus="false" #drawer class="side-content">
+    <app-side-nav (toggleSideContentVisibility)="drawer.toggle()" />
+  </mat-drawer>
+  <mat-drawer-content class="main-content">
+    <app-header (toggleSideContentVisibility)="drawer.toggle()" />
+    <app-main-content />
+  </mat-drawer-content>
+</mat-drawer-container>
