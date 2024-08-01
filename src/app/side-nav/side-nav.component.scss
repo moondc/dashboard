@@ -1,0 +1,24 @@
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+    background-color: bisque;
+}
+
+.link {
+    width: 100%;
+}
+
+.icon {
+    width: 100%
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+    }
+}
