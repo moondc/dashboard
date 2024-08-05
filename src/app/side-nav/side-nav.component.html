@@ -1,4 +1,8 @@
-<button (click)="onClick($event)" class="link" mat-button>Verdaccio</button>
-<button (click)="onClick($event)" class="link" mat-button>Kibana</button>
-<button (click)="onClick($event)" class="link" mat-button>Tickers</button>
-<button (click)="onClick($event)" class="link" mat-button>Admin</button>
+<button routerLink="/home" color="primary" (click)="toggleSideContent()" class="link" mat-button>Home</button>
+<button routerLink="/kibana" color="accent" (click)="toggleSideContent()" class="link" mat-button>Kibana</button>
+<button routerLink="/market-view" color="warn" (click)="toggleSideContent()" class="link" mat-button>Market
+    View</button>
+<button routerLink="/admin" (click)="toggleSideContent()" class="link" mat-button>Admin</button>
+<button routerLink="/verdaccio" (click)="toggleSideContent()" class="link" mat-button>Verdaccio</button>
+<button routerLink="/arch-diagram" (click)="toggleSideContent()" class="link" mat-button>Architecture Diagram</button>
+<button routerLink="/about-me" (click)="toggleSideContent()" class="link" mat-button>About Me</button>

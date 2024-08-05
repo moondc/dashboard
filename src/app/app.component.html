@@ -1,9 +1,11 @@
-<mat-drawer-container class="container">
+<mat-drawer-container class="container" [ngClass]="theme">
   <mat-drawer autoFocus="false" #drawer class="side-content">
     <app-side-nav (toggleSideContentVisibility)="drawer.toggle()" />
   </mat-drawer>
-  <mat-drawer-content class="main-content">
-    <app-header (toggleSideContentVisibility)="drawer.toggle()" />
-    <app-main-content />
+  <mat-drawer-content class="drawer-container">
+    <div class="drawer-content">
+      <app-header class="header-container" (toggleSideContentVisibility)="drawer.toggle()" />
+      <app-main-content class="main-container" />
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

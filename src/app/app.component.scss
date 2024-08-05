@@ -9,11 +9,26 @@
     min-width: 250px;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #AAFFAA;
+    background-color: #363636;
     flex-shrink: 0;
 }
 
-.main-content {
+.drawer-container {
     flex: 1;
     overflow-y: auto;
+}
+
+.drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.header-container {
+    flex: 0 1 auto;
+}
+
+.main-container {
+    flex: 1 1 auto;
 }

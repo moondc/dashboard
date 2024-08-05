@@ -2,5 +2,10 @@
     <button (click)="toggleSideContent()" class="icon" mat-button>
         <mat-icon>menu</mat-icon>
     </button>
-    <div>The Moongoose Den</div>
+    <mat-select class="dropdown" (selectionChange)="onSelect($event)">
+        @for (theme of themes; track theme) {
+        <mat-option [value]="theme">{{theme}}</mat-option>
+        }
+    </mat-select>
+    <p class="">The Moongoose Den</p>
 </header>
