@@ -1,20 +1,207 @@
 @use '@angular/material' as mat;
-
 @use './theme.scss' as mainTheme;
+
 @include mat.core();
 
 
+
+@mixin get-color($theme) {
+    .primary {
+        color: mat.get-theme-color($theme, primary);
+    }
+
+    .on-primary {
+        color: mat.get-theme-color($theme, on-primary);
+    }
+
+    .primary-container {
+        color: mat.get-theme-color($theme, primary-container);
+    }
+
+    .on-primary-container {
+        color: mat.get-theme-color($theme, on-primary-container);
+    }
+
+    .primary-fixed {
+        color: mat.get-theme-color($theme, primary-fixed);
+    }
+
+    .primary-fixed-dim {
+        color: mat.get-theme-color($theme, primary-fixed-dim);
+    }
+
+    .on-primary-fixed {
+        color: mat.get-theme-color($theme, on-primary-fixed);
+    }
+
+    .on-primary-fixed-variant {
+        color: mat.get-theme-color($theme, on-primary-fixed-variant);
+    }
+
+    .secondary {
+        color: mat.get-theme-color($theme, secondary);
+    }
+
+    .on-secondary {
+        color: mat.get-theme-color($theme, on-secondary);
+    }
+
+    .secondary-container {
+        color: mat.get-theme-color($theme, secondary-container);
+    }
+
+    .on-secondary-container {
+        color: mat.get-theme-color($theme, on-secondary-container);
+    }
+
+    .secondary-fixed {
+        color: mat.get-theme-color($theme, secondary-fixed);
+    }
+
+    .secondary-fixed-dim {
+        color: mat.get-theme-color($theme, secondary-fixed-dim);
+    }
+
+    .on-secondary-fixed {
+        color: mat.get-theme-color($theme, on-secondary-fixed);
+    }
+
+    .on-secondary-fixed-variant {
+        color: mat.get-theme-color($theme, on-secondary-fixed-variant);
+    }
+
+    .tertiary {
+        color: mat.get-theme-color($theme, tertiary);
+    }
+
+    .on-tertiary {
+        color: mat.get-theme-color($theme, on-tertiary);
+    }
+
+    .tertiary-container {
+        color: mat.get-theme-color($theme, tertiary-container);
+    }
+
+    .on-tertiary-container {
+        color: mat.get-theme-color($theme, on-tertiary-container);
+    }
+
+    .tertiary-fixed {
+        color: mat.get-theme-color($theme, tertiary-fixed);
+    }
+
+    .tertiary-fixed-dim {
+        color: mat.get-theme-color($theme, tertiary-fixed-dim);
+    }
+
+    .on-tertiary-fixed {
+        color: mat.get-theme-color($theme, on-tertiary-fixed);
+    }
+
+    .on-tertiary-fixed-variant {
+        color: mat.get-theme-color($theme, on-tertiary-fixed-variant);
+    }
+
+    .error {
+        color: mat.get-theme-color($theme, error);
+    }
+
+    .on-error {
+        color: mat.get-theme-color($theme, on-error);
+    }
+
+    .error-container {
+        color: mat.get-theme-color($theme, error-container);
+    }
+
+    .on-error-container {
+        color: mat.get-theme-color($theme, on-error-container);
+    }
+
+    .surface-dim {
+        color: mat.get-theme-color($theme, surface-dim);
+    }
+
+    .surface {
+        color: mat.get-theme-color($theme, surface);
+    }
+
+    .surface-bright {
+        color: mat.get-theme-color($theme, surface-bright);
+    }
+
+    .surface-container-lowest {
+        color: mat.get-theme-color($theme, surface-container-lowest);
+    }
+
+    .surface-container-low {
+        color: mat.get-theme-color($theme, surface-container-low);
+    }
+
+    .surface-container {
+        color: mat.get-theme-color($theme, surface-container);
+    }
+
+    .surface-container-high {
+        color: mat.get-theme-color($theme, surface-container-high);
+    }
+
+    .surface-container-highest {
+        color: mat.get-theme-color($theme, surface-container-highest);
+    }
+
+    .on-surface {
+        color: mat.get-theme-color($theme, on-surface);
+    }
+
+    .on-surface-variant {
+        color: mat.get-theme-color($theme, on-surface-variant);
+    }
+
+    .outline {
+        color: mat.get-theme-color($theme, outline);
+    }
+
+    .outline-variant {
+        color: mat.get-theme-color($theme, outline-variant);
+    }
+
+    .inverse-surface {
+        color: mat.get-theme-color($theme, inverse-surface);
+    }
+
+    .inverse-on-surface {
+        color: mat.get-theme-color($theme, inverse-on-surface);
+    }
+
+    .inverse-primary {
+        color: mat.get-theme-color($theme, inverse-primary);
+    }
+
+    .scrim {
+        color: mat.get-theme-color($theme, scrim);
+    }
+
+    .shadow {
+        color: mat.get-theme-color($theme, shadow);
+    }
+}
 
 body,
 html {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    @include mat.all-component-bases(mainTheme.$light-theme);
+    @include mat.all-component-typographies(mainTheme.$light-theme);
+    @include mat.all-component-densities(mainTheme.$light-theme);
 }
 
 .light-theme {
-    @include mat.all-component-themes(mainTheme.$light-theme);
+    @include mat.all-component-colors(mainTheme.$light-theme);
+    @include get-color(mainTheme.$light-theme);
 }
 
 .dark-theme {
-    @include mat.all-component-themes(mainTheme.$dark-theme);
+    @include mat.all-component-colors(mainTheme.$dark-theme);
+    @include get-color(mainTheme.$dark-theme);
 }
