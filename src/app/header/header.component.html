@@ -3,7 +3,10 @@
         <mat-icon>menu</mat-icon>
     </button>
     <div class="right-container">
-        <div class="">
+        @if (showTooltip){
+        <mat-icon [matTooltip]="tooltip" class="tertiary-fixed-dim" fontIcon="warning"></mat-icon>
+        }
+        <div>
             <mat-select [value]="themes[0]" (selectionChange)="onSelect($event)">
                 @for (theme of themes; track theme) {
                 <mat-option [value]="theme">{{theme}}</mat-option>

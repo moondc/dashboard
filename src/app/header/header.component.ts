@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatFormFieldModule, FormsModule, ReactiveFormsModule],
+  imports: [MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, MatTooltipModule],
   templateUrl: './header.component.html',
   encapsulation: ViewEncapsulation.None,
   styleUrl: './header.component.scss'
@@ -20,9 +21,12 @@ export class HeaderComponent {
   themeService: ThemeService = inject(ThemeService);
   themes = ['dark-theme', 'light-theme'];
   panelClass!: string;
+  tooltip = "Theme settings cannot be applied because this page is using an iframe for the content"
+  showTooltip = false;
 
   ngOnInit() {
     this.themeService.setTheme(this.themes[0]);
+    this.themeService.displayTooltip$.subscribe(res => { this.showTooltip = res });
   }
 
   toggleSideContent() {
