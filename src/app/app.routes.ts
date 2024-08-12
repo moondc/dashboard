@@ -7,6 +7,7 @@ import { VerdaccioComponent } from './links/verdaccio/verdaccio.component';
 import { KibanaComponent } from './links/kibana/kibana.component';
 import { AdminComponent } from './links/admin/admin.component';
 import { ArchDiagramComponent } from './links/arch-diagram/arch-diagram.component';
+import { ThemeColorsComponent } from './links/theme-colors/theme-colors.component';
 
 export const routes: Routes = [
     { path: "arch-diagram", component: ArchDiagramComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'market-view', component: MarketViewComponent },
     { path: 'admin', component: AdminComponent },
     { path: 'about-me', component: AboutMeComponent },
+    { path: 'theme-colors', component: ThemeColorsComponent },
     { path: 'home', component: HomeComponent },
     { path: '', redirectTo: "/home", pathMatch: 'full' },
     { path: '**', component: UnauthorizedComponent },

@@ -1,11 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MainContentComponent } from './main-content/main-content.component';
 import { HeaderComponent } from './header/header.component';
 import { NgClass } from '@angular/common';
-import { ThemeService } from './theme.service';
 
 
 @Component({
@@ -17,10 +16,4 @@ import { ThemeService } from './theme.service';
 })
 export class AppComponent {
   title = 'dashboard';
-  theme!: string;
-  themeService: ThemeService = inject(ThemeService);
-
-  ngOnInit(): void {
-    this.themeService.theme.subscribe(next => this.theme = next);
-  }
 }

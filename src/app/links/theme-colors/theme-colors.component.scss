@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 48%;
+}
+
+.column .box {
+    padding: 0px;
+    text-align: center;
+}
+
+.dark {
+    background-color: black;
+}
+
+.light {
+    background-color: white;
+}

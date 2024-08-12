@@ -2,11 +2,14 @@
     <button (click)="toggleSideContent()" class="icon" mat-button>
         <mat-icon>menu</mat-icon>
     </button>
-    <mat-select class="a" (selectionChange)="onSelect($event)">
-        @for (theme of themes; track theme) {
-        <mat-option [value]="theme">{{theme}}</mat-option>
-        }
-    </mat-select>
-    <p class="secondary b">The Moongoose Den</p>
-
+    <div class="right-container">
+        <div class="">
+            <mat-select [value]="themes[0]" (selectionChange)="onSelect($event)">
+                @for (theme of themes; track theme) {
+                <mat-option [value]="theme">{{theme}}</mat-option>
+                }
+            </mat-select>
+        </div>
+        <div class="float secondary">The Moongoose Den</div>
+    </div>
 </header>

@@ -3,8 +3,6 @@
 
 @include mat.core();
 
-
-
 @mixin get-color($theme) {
     .primary {
         color: mat.get-theme-color($theme, primary);
@@ -199,6 +197,7 @@ html {
 .light-theme {
     @include mat.all-component-colors(mainTheme.$light-theme);
     @include get-color(mainTheme.$light-theme);
+
 }
 
 .dark-theme {
