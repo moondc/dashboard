@@ -1,6 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
+    padding: 2em 2em 2em 2em;
 }
 
 .column {
@@ -10,12 +11,4 @@
 .column .box {
     padding: 0px;
     text-align: center;
-}
-
-.dark {
-    background-color: black;
-}
-
-.light {
-    background-color: white;
 }
