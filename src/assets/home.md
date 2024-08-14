@@ -8,7 +8,6 @@ There's a few other things you should know before you begin venturing off and fi
 
 ## Many of the modules may not yet have functionality
 The fact that they exist shows that I will likely be adding content to them at some point in the near future.  
-The market-view module is both broken and usable since I decided to implement themes.  Since it's still functional, it's less of a priority for me, but I'll fix the colors soon.
 
 ## Most of the work will be behind the scenes
 Most of the things I want to build will not have any meaningful interface  
