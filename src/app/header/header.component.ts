@@ -13,23 +13,22 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, MatTooltipModule],
   templateUrl: './header.component.html',
-  encapsulation: ViewEncapsulation.None,
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @Output() toggleSideContentVisibility = new EventEmitter<void>();
   themeService: ThemeService = inject(ThemeService);
+
+  @Output() toggleSideContentVisibility = new EventEmitter<void>();
   themes = ['dark-theme', 'light-theme'];
   panelClass!: string;
   tooltip = "Theme settings cannot be applied because this page is using an iframe for the content"
   showTooltip = false;
 
   ngOnInit() {
-    this.themeService.setTheme(this.themes[0]);
     this.themeService.displayTooltip$.subscribe(res => { this.showTooltip = res });
   }
 
-  toggleSideContent() {
+  openCloseSideContent() {
     this.toggleSideContentVisibility.emit();
   }
 

@@ -23,12 +23,12 @@ export class MarketOverviewComponent implements AfterViewInit {
         const script = this.renderer.createElement('script');
         const innerhtml = JSON.stringify({
             "tabs": this.tickerList,
-            "colorTheme": "light",
+            "colorTheme": "dark",
             "dateRange": "12M",
             "showChart": true,
             "locale": "en",
             "largeChartUrl": "",
-            "isTransparent": false,
+            "isTransparent": true,
             "showSymbolLogo": true,
             "showFloatingTooltip": false,
             "width": "400",

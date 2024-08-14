@@ -1,5 +1,5 @@
 <header class="header">
-    <button (click)="toggleSideContent()" class="icon" mat-button>
+    <button (click)="openCloseSideContent()" class="icon" mat-button>
         <mat-icon>menu</mat-icon>
     </button>
     <div class="right-container">
@@ -7,7 +7,7 @@
         <mat-icon [matTooltip]="tooltip" class="tertiary-fixed-dim" fontIcon="warning"></mat-icon>
         }
         <div>
-            <mat-select [value]="themes[0]" (selectionChange)="onSelect($event)">
+            <mat-select [value]="themeService.currentTheme$.value" (selectionChange)="onSelect($event)">
                 @for (theme of themes; track theme) {
                 <mat-option [value]="theme">{{theme}}</mat-option>
                 }

@@ -4,6 +4,6 @@ import { ThemeService } from './theme.service';
 
 export const themeGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean => {
   const themeService = inject(ThemeService);
-  themeService.setTooltip(route);
+  themeService.updateTooltipVisibility(route);
   return true;
 };

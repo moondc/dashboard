@@ -24,8 +24,8 @@ export class TickerSingleComponent implements AfterViewInit {
         const innerhtml = JSON.stringify({
             symbol: this.ticker,
             width: 350,
-            isTransparent: false,
-            colorTheme: "light",
+            isTransparent: true,
+            colorTheme: "dark",
             locale: "en"
         });
 
