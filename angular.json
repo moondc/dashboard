@@ -34,6 +34,7 @@
               }
             ],
             "styles": [
+              "node_modules/dashboard-themes/artifacts/styles.css",
               "src/styles.scss"
             ],
             "scripts": []
