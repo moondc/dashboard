@@ -9,6 +9,7 @@ import { AdminComponent } from './links/admin/admin.component';
 import { ArchDiagramComponent } from './links/arch-diagram/arch-diagram.component';
 import { ThemeColorsComponent } from './links/theme-colors/theme-colors.component';
 import { themeGuard } from './theme.guard';
+import { Mp3TaggerComponent } from './links/mp3-tagger/mp3-tagger.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,7 @@ export const routes: Routes = [
             { path: 'about-me', component: AboutMeComponent },
             { path: 'theme-colors', component: ThemeColorsComponent },
             { path: 'home', component: HomeComponent },
+            { path: 'mp3-tagger', component: Mp3TaggerComponent },
             { path: '', redirectTo: "/home", pathMatch: 'full' },
             { path: '**', component: UnauthorizedComponent },
         ]

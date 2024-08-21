@@ -192,6 +192,7 @@ html {
     @include mat.all-component-bases(mainTheme.$light-theme);
     @include mat.all-component-typographies(mainTheme.$light-theme);
     @include mat.all-component-densities(mainTheme.$light-theme);
+
 }
 
 .light-theme {
