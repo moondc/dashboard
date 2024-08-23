@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { DOMAIN } from '../../../environment';
+import { ThemeService } from '../../theme.service';
 
 @Component({
   selector: 'app-mp3-tagger',
@@ -12,9 +13,11 @@ import { DOMAIN } from '../../../environment';
 export class Mp3TaggerComponent implements AfterViewInit {
   url!: SafeUrl;
   sanitizer: DomSanitizer = inject(DomSanitizer);
+  themeService: ThemeService = inject(ThemeService);
+  currentTheme: string = '';
 
   ngOnInit() {
-    // this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://" + DOMAIN + "/mp3-tagger");
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://" + DOMAIN + "/mp3-tagger");
   }
 
   @ViewChild('iframeElement', { static: false }) iframe!: ElementRef;
@@ -24,14 +27,13 @@ export class Mp3TaggerComponent implements AfterViewInit {
     iframe.onload = () => {
       const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
       if (iframeDoc) {
-        // Copy all <style> and <link> elements from the parent document
-        const parentStyles = document.querySelectorAll('style, link[rel="stylesheet"]');
-        parentStyles.forEach(style => {
-          iframeDoc.body.appendChild(style.cloneNode(true));
-        });
-
-        // Example: Adding a class to the iframe's body
-        iframeDoc.body.classList.add('b');
+        this.themeService.currentTheme$.subscribe((next: string) => {
+          if (this.currentTheme) {
+            iframeDoc.body.classList.remove(this.currentTheme);
+          }
+          iframeDoc.body.classList.add(next);
+          this.currentTheme = next;
+        })
       }
     };
   }
