@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { Remarkable } from 'remarkable';
+import { Component, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ARCHITECTURE_DIAGRAM } from '../../../environment';
 
 @Component({
   selector: 'app-arch-diagram',
@@ -10,15 +11,29 @@ import { Remarkable } from 'remarkable';
   styleUrl: './arch-diagram.component.scss'
 })
 export class ArchDiagramComponent {
-  md = new Remarkable();
-  innerHTML: any;
+  url!: SafeResourceUrl;
+  sanitizer: DomSanitizer = inject(DomSanitizer);
 
   constructor(private httpClient: HttpClient) { }
-
   ngOnInit() {
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(`https://embed.diagrams.net/?embed=1&spin=1&modified=0&proto=json`);
+    window.addEventListener('message', this.message.bind(this))
+  }
 
-    this.httpClient.get('assets/under_construction.md', { responseType: 'text' }).subscribe((data: string) => {
-      this.innerHTML = this.md.render(data);
-    })
+  message(event: any) {
+    {
+      console.log(event);
+      if (event.data.length > 0) {
+        var msg = JSON.parse(event.data);
+
+        if (msg.event == 'init') {
+          this.httpClient.get(ARCHITECTURE_DIAGRAM, { responseType: 'text' }).subscribe(next => {
+            console.log(next);
+            event.source.postMessage(JSON.stringify(
+              { action: 'load', xml: next }), '*');
+          })
+        }
+      }
+    };
   }
 }

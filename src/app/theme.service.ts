@@ -27,7 +27,7 @@ export class ThemeService {
   }
 
   private shouldDisplayTooltip(route: string): boolean {
-    const tooltipRoutes = new Set(['kibana', 'verdaccio']);
+    const tooltipRoutes = new Set(['kibana', 'verdaccio', 'arch-diagram']);
     return tooltipRoutes.has(route);
   }
 }
