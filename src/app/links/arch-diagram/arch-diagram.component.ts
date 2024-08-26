@@ -22,13 +22,12 @@ export class ArchDiagramComponent {
 
   message(event: any) {
     {
-      console.log(event);
+      // console.log(event);
       if (event.data.length > 0) {
-        var msg = JSON.parse(event.data);
+        const msg = JSON.parse(event.data);
 
         if (msg.event == 'init') {
           this.httpClient.get(ARCHITECTURE_DIAGRAM, { responseType: 'text' }).subscribe(next => {
-            console.log(next);
             event.source.postMessage(JSON.stringify(
               { action: 'load', xml: next }), '*');
           })
