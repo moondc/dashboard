@@ -10,6 +10,7 @@ import { ArchDiagramComponent } from './links/arch-diagram/arch-diagram.componen
 import { ThemeColorsComponent } from './links/theme-colors/theme-colors.component';
 import { themeGuard } from './theme.guard';
 import { Mp3TaggerComponent } from './links/mp3-tagger/mp3-tagger.component';
+import { WatchlistComponent } from './links/watchlist/watchlist.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,7 @@ export const routes: Routes = [
             { path: 'verdaccio', component: VerdaccioComponent },
             { path: 'kibana', component: KibanaComponent },
             { path: 'market-view', component: MarketViewComponent },
+            { path: 'watchlist', component: WatchlistComponent },
             { path: 'admin', component: AdminComponent },
             { path: 'about-me', component: AboutMeComponent },
             { path: 'theme-colors', component: ThemeColorsComponent },

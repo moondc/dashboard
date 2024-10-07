@@ -1,0 +1,29 @@
+<br />
+<div class="header">
+    <mat-form-field>
+        <mat-label>Ticker Symbol</mat-label>
+        <input matInput [(ngModel)]="tickerField" />
+    </mat-form-field>
+    <div class="button">
+        <button mat-flat-button (click)="addTicker()">Add Ticker</button>
+    </div>
+</div>
+<br />
+
+<mat-selection-list class="list_container">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            @for (ticker of tickers; track ticker) {
+            <div class="list_item">
+                <app-ticker-single [ticker]="ticker" />
+                <mat-icon (click)="onIconClick($event, ticker)" class="list_item_icon" fontIcon="close"></mat-icon>
+            </div>
+            } @empty {
+            <div> No Tickers Saved</div>
+            }
+        </mat-card-content>
+    </mat-card>
+</mat-selection-list>
+<div class="container">
+
+</div>
